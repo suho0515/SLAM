@@ -28,7 +28,7 @@ target_link_libraries(specific_package_you're_developing
 if you want to make it library then CmakeLists.txt setting is like below.  
 ~~~
 # library
-target_link_libraries(visualOdometry
+target_link_libraries(specific_package_you're_developing
     slam_lib
 )
 
