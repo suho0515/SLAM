@@ -1,4 +1,4 @@
-# rgbd_camera_sub.md
+# rgbd_camera_sub
 It's for subscribing rgbd camera topics simultaneously. ( color image, depth image, color camera info, depth camera info)
 
 # Dependencies
