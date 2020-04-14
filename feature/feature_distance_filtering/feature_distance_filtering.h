@@ -7,7 +7,16 @@
 
 #include <vector>
 
+#include <time.h>
+
+
+
 void feature_distance_filtering(std::vector<cv::KeyPoint>& key_points, int threshold=50)	{   
+
+	clock_t start, end;
+	double result;
+
+	start = clock();
 
 	int x_1,y_1,
 		x_2,y_2,
@@ -25,4 +34,9 @@ void feature_distance_filtering(std::vector<cv::KeyPoint>& key_points, int thres
 			if(distance<threshold) key_points.erase(key_points.begin()+(j-1));
 		}
 	}
+
+	end = clock();
+	result = (double)(end-start);
+	cout << "feature_distance_filtering process time : " << result << endl;
+
 }
