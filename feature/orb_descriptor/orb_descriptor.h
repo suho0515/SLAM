@@ -7,15 +7,25 @@
 
 #include <vector>
 
-void ORB_descriptor(cv::Mat img, std::vector<cv::KeyPoint>& key_points, cv::Mat desp)	{   //uses FAST as of now, modify parameters as necessary
+#include <time.h>
 
-  cv::Ptr<cv::DescriptorExtractor> _descriptor;
-  _descriptor = cv::ORB::create();
-  _descriptor->compute( img, key_points, desp );
+using namespace std;
 
 
-  // for (size_t i = 0; i < 100; ++i) {
-  //     std::cout << "ORB Keypoint #:" << i;
-  //     std::cout << " Size " << feature_points[i].size << " Angle " << feature_points[i].angle << " Response " << feature_points[i].response << " Octave " << feature_points[i].octave << std::endl;
-  //}
+
+void ORB_descriptor(cv::Mat img, std::vector<cv::KeyPoint>& key_points, cv::Mat& desp)	{   //uses FAST as of now, modify parameters as necessary
+
+  clock_t start, end;
+  double result;
+
+  start = clock();
+
+  cv::Ptr <cv::DescriptorExtractor> descriptor;
+	descriptor = cv::ORB::create();
+	descriptor->compute( img, key_points, desp );
+
+  end = clock();
+  result = (double)(end-start);
+  cout << "ORB_descriptor process time : " << result << endl;
+
 }
