@@ -7,7 +7,7 @@
 
 #include <vector>
 
-void ORB_feature_detection(cv::Mat img, std::vector<cv::KeyPoint>& feature_points)	{   //uses FAST as of now, modify parameters as necessary
+void ORB_feature_detection(cv::Mat img, std::vector<cv::KeyPoint>& feature_points)	{   
 
   cv::Ptr<cv::FeatureDetector> _detector;
   _detector = cv::ORB::create();
