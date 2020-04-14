@@ -20,5 +20,6 @@ also include in your program file.
 
 ~~~
 #include <Eigen/Core>
+#include <Eigen/Geometry>
 #include <opencv2/core/eigen.hpp>
 ~~~
